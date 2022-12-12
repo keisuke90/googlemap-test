@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "pinia": "^2.0.28",
-    "vue": "^3.2.45"
+    "vue": "^3.2.45",
+    "vue3-google-map": "^0.15.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",

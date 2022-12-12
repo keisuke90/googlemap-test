@@ -1,47 +1,24 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <GoogleMap
+    api-key="GOOGLE_MAP_API_KEY"
+    style="width: 100%; height: 500px"
+    :center="center"
+    :zoom="15"
+  >
+    <Marker :options="{ position: center }" />
+  </GoogleMap>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script>
+import { defineComponent } from "vue";
+import { GoogleMap, Marker } from "vue3-google-map";
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+export default defineComponent({
+  components: { GoogleMap, Marker },
+  setup() {
+    const center = { lat: 40.689247, lng: -74.044502 };
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
+    return { center };
+  },
+});
+</script>
