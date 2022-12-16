@@ -17,4 +17,10 @@ export const liveCameras = [
     lng: 127.6,
     src: "https://www.youtube.com/watch?v=-Mzc3aI25yA",
   },
+  {
+    location: "アメリカ タイムズスクエア",
+    lat: 40.75,
+    lng: -73.98,
+    src: "https://www.youtube.com/watch?v=1-iS7LArMPA",
+  },
 ];
