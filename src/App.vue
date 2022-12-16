@@ -8,16 +8,15 @@
     <Marker
       v-for="camera in cameras"
       :options="{ position: { lat: camera.lat, lng: camera.lng } }"
-      @click="showModal()"
+      @click="
+        showModal();
+        getVideoSrc(camera);
+      "
     />
   </GoogleMap>
 
   <video-modal :isVisible="modalVisible" @close="closeModal">
-    <YouTube
-      :src="'https://www.youtube.com/watch?v=jNQXAC9IVRw&t=11s'"
-      @ready="onReady"
-      ref="youtube"
-    />
+    <YouTube :src="videoSrc" @ready="onReady" ref="youtube" />
   </video-modal>
 </template>
 
@@ -41,5 +40,10 @@ const showModal = () => {
 };
 const closeModal = () => {
   modalVisible.value = false;
+};
+
+let videoSrc = ref("");
+const getVideoSrc = (camera) => {
+  videoSrc.value = camera.src;
 };
 </script>
