@@ -1,9 +1,9 @@
 <template>
   <GoogleMap
     :api-key="apiKey"
-    style="width: 100%; height: 500px"
+    style="width: 100%; height: 700px"
     :center="center"
-    :zoom="4"
+    :zoom="2"
   >
     <Marker
       v-for="camera in cameras"
@@ -27,7 +27,7 @@ import YouTube from "vue3-youtube";
 import { liveCameras } from "./live-cameras";
 import videoModal from "./components/videoModal.vue";
 
-const center = { lat: 38.0, lng: 140.0 };
+const center = { lat: 36.0, lng: 180.0 };
 const apiKey = import.meta.env.VITE_GOOGLE_MAP_API_KEY;
 const onReady = () => {
   this.$refs.youtube.playVideo();
