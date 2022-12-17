@@ -23,4 +23,10 @@ export const liveCameras = [
     lng: -73.98,
     src: "https://www.youtube.com/watch?v=1-iS7LArMPA",
   },
+  {
+    location: "ナミビア",
+    lat: -22.57,
+    lng: 17.0836,
+    src: "https://www.youtube.com/watch?v=ydYDqZQpim8",
+  },
 ];
