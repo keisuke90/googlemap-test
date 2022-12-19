@@ -18,6 +18,7 @@
       "
     ></Marker>
   </GoogleMap>
+  <locationLists :cameras="cameras"></locationLists>
 
   <video-modal :isVisible="modalVisible" @close="closeModal">
     <YouTube :src="videoSrc" @ready="onReady" ref="youtube" />
@@ -31,6 +32,7 @@ import YouTube from "vue3-youtube";
 import { liveCameras } from "./live-cameras";
 import videoModal from "./components/videoModal.vue";
 import theHeader from "./components/theHeader.vue";
+import locationLists from "./components/locationLists.vue";
 
 const center = { lat: 36.0, lng: 180.0 };
 const apiKey = import.meta.env.VITE_GOOGLE_MAP_API_KEY;
