@@ -4,7 +4,7 @@
     :api-key="apiKey"
     style="width: 100%; height: 700px"
     :center="center"
-    :zoom="2"
+    :zoom="zoomLevel"
   >
     <CustomControl position="TOP_CENTER">
       <button class="custom-btn" @click="centerMap()">CENTER</button>
@@ -18,7 +18,10 @@
       "
     ></Marker>
   </GoogleMap>
-  <locationLists :cameras="cameras"></locationLists>
+  <locationLists
+    :cameras="cameras"
+    @changeCenter="changeCenter"
+  ></locationLists>
 
   <video-modal :isVisible="modalVisible" @close="closeModal">
     <YouTube :src="videoSrc" @ready="onReady" ref="youtube" />
@@ -34,14 +37,20 @@ import videoModal from "./components/videoModal.vue";
 import theHeader from "./components/theHeader.vue";
 import locationLists from "./components/locationLists.vue";
 
-const center = { lat: 36.0, lng: 180.0 };
 const apiKey = import.meta.env.VITE_GOOGLE_MAP_API_KEY;
 const onReady = () => {
   this.$refs.youtube.playVideo();
 };
 const cameras = liveCameras;
 
-const centerMap = () => {};
+let zoomLevel = ref(2);
+let center = ref({ lat: 36.0, lng: 180.0 });
+const centerMap = () => {
+  center.value = { lat: 36.0, lng: 180.0 };
+};
+const changeCenter = (lat, lng) => {
+  center.value = { lat: lat, lng: lng };
+};
 
 let modalVisible = ref(false);
 const showModal = () => {

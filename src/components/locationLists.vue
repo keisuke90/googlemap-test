@@ -1,14 +1,20 @@
+<template>
+  <ul class="location-wrap">
+    <li class="location" @click="tagClick(camera)" v-for="camera in cameras">
+      {{ camera.location }}
+    </li>
+  </ul>
+</template>
+
 <script setup>
 const props = defineProps({
   cameras: Array,
 });
+const emit = defineEmits();
+const tagClick = (camera) => {
+  emit("changeCenter", camera.lat, camera.lng);
+};
 </script>
-
-<template>
-  <ul class="location-wrap">
-    <li class="location" v-for="camera in cameras">{{ camera.location }}</li>
-  </ul>
-</template>
 
 <style scoped>
 .location-wrap {
