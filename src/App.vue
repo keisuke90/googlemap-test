@@ -1,10 +1,12 @@
 <template>
   <theHeader />
   <GoogleMap
+    ref="mapRef"
     :api-key="apiKey"
     style="width: 100%; height: 700px"
     :center="center"
     :zoom="zoomLevel"
+    @dragend="dragMap"
   >
     <CustomControl position="TOP_CENTER">
       <button class="custom-btn" @click="centerMap()">CENTER</button>
@@ -57,6 +59,13 @@ const centerMap = () => {
 };
 const changeCenter = (lat, lng) => {
   center.value = { lat: lat, lng: lng };
+};
+const mapRef = ref(null);
+const dragMap = () => {
+  center.value = {
+    lat: mapRef.value.map.center.lat(),
+    lng: mapRef.value.map.center.lng(),
+  };
 };
 
 let modalVisible = ref(false);
