@@ -28,8 +28,10 @@
 
   <video-modal :isVisible="modalVisible" @close="closeModal">
     <YouTube
+      v-if="videoSrc"
       :src="videoSrc"
       @ready="onReady"
+      @playback-quality-change="setVolumeZero"
       ref="youtube"
       host="https://www.youtube-nocookie.com"
     />
@@ -46,10 +48,12 @@ import theHeader from "./components/theHeader.vue";
 import locationLists from "./components/locationLists.vue";
 
 const apiKey = import.meta.env.VITE_GOOGLE_MAP_API_KEY;
+const youtube = ref(null);
 const onReady = () => {
-  if (!videoSrc) {
-    this.$refs.youtube.playVideo();
-  }
+  youtube._rawValue.playVideo();
+};
+const setVolumeZero = () => {
+  youtube._rawValue.setVolume(0);
 };
 const cameras = liveCameras;
 
