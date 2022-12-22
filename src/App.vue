@@ -39,7 +39,9 @@ import locationLists from "./components/locationLists.vue";
 
 const apiKey = import.meta.env.VITE_GOOGLE_MAP_API_KEY;
 const onReady = () => {
-  this.$refs.youtube.playVideo();
+  if (!videoSrc) {
+    this.$refs.youtube.playVideo();
+  }
 };
 const cameras = liveCameras;
 
