@@ -24,7 +24,12 @@
   ></locationLists>
 
   <video-modal :isVisible="modalVisible" @close="closeModal">
-    <YouTube :src="videoSrc" @ready="onReady" ref="youtube" />
+    <YouTube
+      :src="videoSrc"
+      @ready="onReady"
+      ref="youtube"
+      host="https://www.youtube-nocookie.com"
+    />
   </video-modal>
 </template>
 
