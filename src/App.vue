@@ -65,6 +65,7 @@ const centerMap = () => {
 };
 const changeCenter = (lat, lng) => {
   center.value = { lat: lat, lng: lng };
+  zoomLevel.value = 7;
 };
 const mapRef = ref(null);
 const dragMap = () => {
