@@ -7,6 +7,7 @@
     :center="center"
     :zoom="zoomLevel"
     @dragend="dragMap"
+    @zoom_changed="changeZoom"
   >
     <CustomControl position="TOP_CENTER">
       <button class="custom-btn" @click="centerMap()">CENTER</button>
@@ -56,6 +57,7 @@ let zoomLevel = ref(2);
 let center = ref({ lat: 36.0, lng: 180.0 });
 const centerMap = () => {
   center.value = { lat: 36.0, lng: 180.0 };
+  zoomLevel.value = 2;
 };
 const changeCenter = (lat, lng) => {
   center.value = { lat: lat, lng: lng };
@@ -66,6 +68,9 @@ const dragMap = () => {
     lat: mapRef.value.map.center.lat(),
     lng: mapRef.value.map.center.lng(),
   };
+};
+const changeZoom = () => {
+  zoomLevel.value = mapRef.value.map.getZoom();
 };
 
 let modalVisible = ref(false);
