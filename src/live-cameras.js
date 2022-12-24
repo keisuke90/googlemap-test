@@ -13,12 +13,12 @@ export const liveCameras = [
   },
   {
     location: "沖縄 那覇",
-    lat: 26.2,
-    lng: 127.6,
+    lat: 26.2123,
+    lng: 127.6791,
     src: "https://www.youtube.com/watch?v=-Mzc3aI25yA",
   },
   {
-    location: "アメリカ タイムズスクエア",
+    location: "アメリカ ニューヨーク",
     lat: 40.75,
     lng: -73.98,
     src: "https://www.youtube.com/watch?v=1-iS7LArMPA",
@@ -28,5 +28,29 @@ export const liveCameras = [
     lat: -22.57,
     lng: 17.0836,
     src: "https://www.youtube.com/watch?v=ydYDqZQpim8",
+  },
+  {
+    location: "イタリア ベネチア",
+    lat: 45.4343,
+    lng: 12.3388,
+    src: "https://www.youtube.com/watch?v=HpZAez2oYsA",
+  },
+  {
+    location: "ロシア サンクトペテルブルグ",
+    lat: 59.9339,
+    lng: 30.3061,
+    src: "https://www.youtube.com/watch?v=rG13FY2ytno",
+  },
+  {
+    location: "フィリピン",
+    lat: 14.583333,
+    lng: 120.966667,
+    src: "https://www.youtube.com/watch?v=zu6yUYEERwA",
+  },
+  {
+    location: "オーストラリア シドニー",
+    lat: -33.8674869,
+    lng: 151.2069902,
+    src: "https://www.youtube.com/watch?v=KPrrWB1eo1I",
   },
 ];
