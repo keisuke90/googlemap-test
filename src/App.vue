@@ -94,20 +94,17 @@ const getVideoSrc = (camera) => {
 
 <style scoped>
 .custom-btn {
-  box-sizing: border-box;
-  background: white;
-  height: 30px;
-  width: auto;
-  border-radius: 2px;
-  border: 0px;
-  margin: 10px;
+  color: white;
+  font-size: 15px;
+  height: 40px;
+  margin: 10px 0;
   padding: 5px;
-  font-size: 1.25rem;
-  text-transform: none;
-  appearance: none;
   cursor: pointer;
-  user-select: none;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
-  overflow: hidden;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 </style>
