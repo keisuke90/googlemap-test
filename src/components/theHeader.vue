@@ -2,7 +2,7 @@
 
 <template>
   <header class="header">
-    <h1 class="title">世界のライブカメラ</h1>
+    <h1 class="title">🇮🇲 🇮🇱 🇮🇹 🇯🇲 🇯🇵　世界のライブカメラ　🇨🇳 🇨🇽 🇨🇨 🇨🇴 🇰🇲</h1>
   </header>
 </template>
 
