@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "dotenv": "^16.0.3",
+    "gh-pages": "^4.0.0",
     "pinia": "^2.0.28",
     "vue": "^3.2.45",
     "vue3-google-map": "^0.15.0",
