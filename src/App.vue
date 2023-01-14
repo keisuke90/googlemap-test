@@ -47,7 +47,10 @@ import videoModal from "./components/videoModal.vue";
 import theHeader from "./components/theHeader.vue";
 import locationLists from "./components/locationLists.vue";
 
-const apiKey = import.meta.env.VITE_GOOGLE_MAP_API_KEY;
+const apiKey =
+  import.meta.env.VITE_GOOGLE_MAP_API_KEY ||
+  process.env.VITE_GOOGLE_MAP_API_KEY;
+
 const youtube = ref(null);
 const onReady = () => {
   youtube._rawValue.playVideo();
